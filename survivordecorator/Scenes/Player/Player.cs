@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Godot;
 public interface IPlayer
 {
+	Vector2 GetPosition();
+	void SetPosition(Vector2 newPosition);
 	int GetSpeed();
 	void SetSpeed(int newSpeed);
 	void Update();
@@ -11,10 +13,11 @@ public interface IPlayer
 public partial class Player : CharacterBody2D, IPlayer
 {
 	[Export] public int Speed = 250;
+	public new Vector2 GetPosition() => Position;
+	public new void SetPosition(Vector2 newPosition) => Position = newPosition;
 	public int GetSpeed() => Speed;
-	public void SetSpeed(int newSpeed) {
-		this.Speed = newSpeed;
-	}
+	public void SetSpeed(int newSpeed) => Speed = newSpeed;
+
 	public void Update()
 	{
 		Vector2 direction = Vector2.Zero;
@@ -38,6 +41,8 @@ public abstract class PlayerDecorator : IPlayer
 		this.player = player;
 	}
 
+	public virtual  Vector2 GetPosition() => player.GetPosition();
+	public  void SetPosition(Vector2 newPosition) => player.SetPosition(newPosition);
 	public virtual int GetSpeed() => player.GetSpeed();
 	public virtual void SetSpeed(int newSpeed) => player.SetSpeed(newSpeed);
 	public virtual void Update() => player.Update();
@@ -58,7 +63,7 @@ public class ShootDecorator : PlayerDecorator
 
 	public event PlayerShootEventHandler PlayerShoot;
 
-	private int cooldownInMs = 1000;
+	private int cooldownInMs = 2000;
 	private bool canShoot = true;
 	public ShootDecorator(IPlayer player) : base(player) { }
 	public override async void Update()

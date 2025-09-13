@@ -8,7 +8,7 @@
 size = Vector2(20, 30)
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(3, 3)
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_uvnfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
