@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfvmfttxpy1p8"]
+
+[ext_resource type="Script" uid="uid://cycbjjvrkrtqf" path="res://Scenes/UI/Ui.cs" id="1_ahcct"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ahcct")
+
+[node name="HealthContainer" type="HBoxContainer" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 84.0
+offset_bottom = 70.0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://csxotceh8hm5b"]
+[gd_scene load_steps=4 format=3 uid="uid://csxotceh8hm5b"]
 
 [ext_resource type="PackedScene" uid="uid://dload522sntjy" path="res://Scenes/Player/player.tscn" id="1_1r6ip"]
 [ext_resource type="Script" uid="uid://bspm8r65cyuqx" path="res://Scenes/Main/Main.cs" id="1_lixft"]
+[ext_resource type="PackedScene" uid="uid://dfvmfttxpy1p8" path="res://Scenes/UI/ui.tscn" id="3_qw60k"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lixft")
@@ -12,9 +13,11 @@ position = Vector2(640, 360)
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 49.0
-offset_top = 29.0
-offset_right = 347.0
-offset_bottom = 78.0
+offset_left = 965.0
+offset_top = 24.0
+offset_right = 1263.0
+offset_bottom = 73.0
 text = "Espacio para habilitar disparo de balas
 Enter para aumentar velocidad"
+
+[node name="UI" parent="." instance=ExtResource("3_qw60k")]
