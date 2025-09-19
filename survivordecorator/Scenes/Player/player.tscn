@@ -1,20 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dload522sntjy"]
 
 [ext_resource type="Script" uid="uid://bufi4expewtwc" path="res://Scenes/Player/Player.cs" id="1_uvnfx"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_7tpwr"]
+[ext_resource type="Texture2D" uid="uid://cupcv8ij1lrtc" path="res://Sprites/Player/knight_f_idle_anim_f0.png" id="2_a3d8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnfx"]
 size = Vector2(20, 30)
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 script = ExtResource("1_uvnfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4.76837e-07, -1.19209e-06)
-scale = Vector2(20, 30)
-texture = SubResource("CanvasTexture_7tpwr")
+position = Vector2(0, -11)
+scale = Vector2(2, 2)
+texture = ExtResource("2_a3d8c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uvnfx")

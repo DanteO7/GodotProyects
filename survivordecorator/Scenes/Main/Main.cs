@@ -3,8 +3,7 @@ using System;
 
 public partial class Main : Node2D
 {
-	public PackedScene bulletScene = GD.Load<PackedScene>("res://Scenes/Projectiles/bullet.tscn");
-
+	public PackedScene arrowScene = GD.Load<PackedScene>("res://Scenes/Projectiles/arrow.tscn");
 
 	private IPlayer player;
 	private Node2D projectiles;
@@ -32,14 +31,13 @@ public partial class Main : Node2D
 		{
 			player = new ShootDecorator(player);
 			if (player is ShootDecorator shootDecorator) shootDecorator.PlayerShoot += OnPlayerShoot;
-
 		}
 	}
 
 	private void OnPlayerShoot()
 	{
-		var bullet = bulletScene.Instantiate<Area2D>();
-		bullet.Position = player.GetPosition();
-		projectiles.AddChild(bullet);
+		var arrow = arrowScene.Instantiate<Area2D>();
+		arrow.Position = player.GetPosition();
+		projectiles.AddChild(arrow);
 	}
 }

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://5t65pnfsyt3b"]
+
+[ext_resource type="Script" uid="uid://hggl0l1dsobb" path="res://Scenes/Projectiles/Arrow.cs" id="1_1fs1j"]
+[ext_resource type="Texture2D" uid="uid://c6vwv13jcs8uh" path="res://Sprites/Weapons/weapon_arrow.png" id="2_fpagu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hxsa"]
+size = Vector2(5, 21.25)
+
+[node name="Arrow" type="Area2D"]
+scale = Vector2(1.6, 1.6)
+script = ExtResource("1_1fs1j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fpagu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3hxsa")
